@@ -6,10 +6,7 @@ import { RouterLink } from "vue-router";
 	<main class="flex h-screen flex-col items-center justify-around bg-black">
 		<div class="max-w-md text-center">
 			<h1 class="text-2xl font-semibold text-white hover:text-blue-600">Welcome to Task Management App</h1>
-			<p class="mt-2 text-white hover:text-blue-600">
-				A kanban board is an agile project management tool designed to help visualize work, limit
-				work-in-progress, and maximize efficiency (or flow).
-			</p>
+			
 		</div>
 
 		<div>
