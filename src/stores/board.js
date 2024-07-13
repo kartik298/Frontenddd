@@ -27,14 +27,14 @@ export const useBoardStore = defineStore({
 			const index = this.lists.findIndex((list) => list.id === listId);
 			this.lists.splice(index, 1);
 		},
-		addItem({ listId, title, description, date }) {
+		addItem({ listId, title, description, img }) {
 			const list = getListById(this.lists, listId);
-			list.items.push(makeItem(title, description, date, null));
+			list.items.push(makeItem(title, description, img, null));
 		},
-		updateItem({ itemId, title, description, date }) {
+		updateItem({ itemId, title, description, img }) {
 			const item = getItemById(this.lists, itemId);
 			if (item) {
-				Object.assign(item, makeItem(title, description, date, itemId));
+				Object.assign(item, makeItem(title, description, img, itemId));
 			}
 		},
 		removeItem({ itemId }) {

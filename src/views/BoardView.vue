@@ -1,5 +1,5 @@
 <template>
-	<div class="flex h-screen flex-col bg-blue-600">
+	<div class="flex h-screen flex-col bg-gray-800">
 		<!-- TheNavbar -->
 		<TheNavbar />
 
@@ -8,13 +8,11 @@
 			<div class="flex h-full flex-col">
 				<!-- Board Title -->
 				<div class="flex shrink-0 items-center justify-between p-4">
-					<h1 class="text-2xl font-bold text-white">Wall-E</h1>
+
 					<div>
 						<button
 							class="inline-flex items-center rounded-md bg-white/10 px-3 py-2 text-sm font-medium text-white hover:bg-white/20"
 						>
-							<CogIcon class="h-5 w-5 text-gray-300" />
-							<span class="ml-2"> Settings</span>
 						</button>
 					</div>
 				</div>
@@ -29,11 +27,8 @@
 							@on-start="onDragStart"
 							@on-drop="onDragDrop"
 						/>
-
-						<!-- Add List -->
-						<div class="w-72">
-							<AddList />
-						</div>
+					</div>
+					<div>
 					</div>
 				</div>
 			</div>
@@ -45,13 +40,10 @@
 // Components
 import TheNavbar from "../components/TheNavbar.vue";
 import TheList from "../components/TheList.vue";
-import AddList from "../components/AddList.vue";
+
 
 // Utils
 import { getIndexOfItemById } from "../utils/board";
-
-// Icons
-import { CogIcon } from "@heroicons/vue/solid";
 
 // Store
 import { useBoardStore } from "@/stores/board";
@@ -83,12 +75,5 @@ function onDragDrop({ evt, listId }) {
 </script>
 
 <style scoped>
-::-webkit-scrollbar {
-	width: 10px;
-	height: 10px;
-}
-::-webkit-scrollbar-thumb {
-	background: #9ca3af;
-	border-radius: 6px;
-}
+
 </style>

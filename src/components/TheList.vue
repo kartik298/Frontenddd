@@ -1,11 +1,9 @@
 <template>
-	<div @drop="onDrop($event, list.id)" class="flex max-h-full w-72 flex-col rounded-md bg-gray-200">
+	<div @drop="onDrop($event, list.id)" class="flex max-h-full w-100 flex-col rounded-md bg-gray-800">
 		<!-- List Title -->
 		<div class="flex items-center justify-between px-3 py-2">
-			<h3 class="text-sm font-semibold text-gray-700">{{ list.title }}</h3>
-			<button class="grid h-8 w-8 place-content-center rounded-md hover:bg-gray-300" @click="removeList(list.id)">
-				<XIcon class="h-5 w-5 text-gray-400" />
-			</button>
+			<h3 class="text-sm font-semibold text-white">{{ list.title }}</h3>
+		
 		</div>
 
 		<!-- List Cards -->
@@ -58,8 +56,8 @@ import Draggable from "vuedraggable";
 import TheCard from "../components/TheCard.vue";
 import AddCard from "../components/AddCard.vue";
 
-// Icons
-import { XIcon, PlusIcon } from "@heroicons/vue/solid";
+
+import { PlusIcon } from "@heroicons/vue/solid";
 
 // Store
 import { useBoardStore } from "@/stores/board";
@@ -91,13 +89,6 @@ function onDrop(evt, listId) {
 	emit("onDrop", { evt, listId });
 }
 
-// List Methods
-function removeList(listId) {
-	boardStore.removeList({
-		listId: listId,
-	});
-}
-
 const listRef = ref();
 function onCardCreated() {
 	listRef.value.scrollTop = listRef.value.scrollHeight;
@@ -109,11 +100,11 @@ function onCardCreated() {
 	width: 7px;
 }
 ::-webkit-scrollbar-track {
-	background: #d1d5db;
+	background: #5a5a5d;
 	border-radius: 4px;
 }
 ::-webkit-scrollbar-thumb {
-	background: #9ca3af;
+	background: #48494e;
 	border-radius: 4px;
 }
 </style>
