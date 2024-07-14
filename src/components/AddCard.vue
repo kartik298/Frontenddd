@@ -8,7 +8,6 @@
 						leave-to="opacity-0">
 						<DialogOverlay class="fixed inset-0 bg-black bg-opacity-50" />
 					</TransitionChild>
-
 					<span class="inline-block h-screen align-middle" aria-hidden="true"> &#8203; </span>
 
 					<TransitionChild as="template" enter="duration-300 ease-out" enter-from="opacity-0 scale-95"
@@ -19,7 +18,7 @@
 							<DialogTitle as="h3" class="text-lg font-medium leading-6 text-gray-900">
 								{{ isEdit ? "Edit Task" : "Add Task" }}
 							</DialogTitle>
-
+							{{task }}
 							<div class="mt-4">
 								<form action="" @submit.prevent="isEdit ? updateCard() : addNewCard()" class="w-full">
 									<div>
@@ -120,6 +119,7 @@ function addNewCard() {
 		title: task.title,
 		description: task.description,
 		img: task.img,
+		avatars:task.avatars
 	});
 
 	task.title = "";
@@ -140,7 +140,7 @@ function updateCard() {
 		itemId: props.task.id,
 		title: task.title,
 		description: task.description,
-		date: task.img,
+		img: task.img,
 	});
 
 	error.value = "";

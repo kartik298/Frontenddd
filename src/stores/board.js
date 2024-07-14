@@ -27,9 +27,11 @@ export const useBoardStore = defineStore({
 			const index = this.lists.findIndex((list) => list.id === listId);
 			this.lists.splice(index, 1);
 		},
-		addItem({ listId, title, description, img }) {
+		addItem({ listId, title, description, img,avatars }) {
+			console.log(listId,title,description,img);
 			const list = getListById(this.lists, listId);
-			list.items.push(makeItem(title, description, img, null));
+			console.log(list);
+			list.items.push(makeItem(title, description, img,avatars));
 		},
 		updateItem({ itemId, title, description, img }) {
 			const item = getItemById(this.lists, itemId);

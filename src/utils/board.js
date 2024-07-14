@@ -1,8 +1,9 @@
 import { v1 as uuidv1 } from "uuid";
 
-export function makeItem(title, description, date, id = null) {
+export function makeItem(title, description, img,avatars, id = null) {
 	id = id || uuidv1();
-	return { id, title, description, date };
+	console.log(id,title,description,img,avatars);
+	return { id, title, description, img,avatars};
 }
 
 export function makeList(title, items = []) {

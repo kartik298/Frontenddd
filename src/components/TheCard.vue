@@ -4,7 +4,6 @@
 		<!-- Image section -->
 		<div v-if="task.img" class="relative w-full h-48 mb-2">
 		  <img :src="task.img" :alt="'Image for ' + task.title" class="rounded-t-md object-cover w-full h-full">
-		  
 		</div>
   
 		<!-- Title and Description section -->
@@ -24,8 +23,9 @@
 	  </div>
   
 	  <div class="absolute bottom-0 right-0 flex space-x-2 p-2">
+		<PlusIcon class="h-5 w-5" />
 		<div v-for="(avatar, index) in task.avatars.slice(0, 2)" :key="index">
-		  <img :src="avatar" alt="Avatar" class="h-8 w-8 rounded-full object-cover ring-2 ring-white">
+		  <img :src="avatar" alt="Avatar" class="h-6 w-6 rounded object-cover ring-2 ring-white">
 		</div>
 	  </div>
 	  <!-- Modal for editing -->
