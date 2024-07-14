@@ -3,21 +3,15 @@
 		<Dialog as="div" @close="emit('closeModal')">
 			<div class="fixed inset-0 z-10 overflow-y-auto">
 				<div class="min-h-screen px-4 text-center">
-					<TransitionChild as="template" enter="duration-300 ease-out" enter-from="opacity-0"
-						enter-to="opacity-100" leave="duration-200 ease-in" leave-from="opacity-100"
-						leave-to="opacity-0">
-						<DialogOverlay class="fixed inset-0 bg-black bg-opacity-50" />
-					</TransitionChild>
+					
 					<span class="inline-block h-screen align-middle" aria-hidden="true"> &#8203; </span>
 
-					<TransitionChild as="template" enter="duration-300 ease-out" enter-from="opacity-0 scale-95"
-						enter-to="opacity-100 scale-100" leave="duration-200 ease-in" leave-from="opacity-100 scale-100"
-						leave-to="opacity-0 scale-95">
+					<div class="py-50">
 						<div
 							class="my-8 inline-block w-full max-w-md transform overflow-hidden rounded-2xl bg-white p-6 text-left align-middle shadow-xl transition-all">
-							<DialogTitle as="h3" class="text-lg font-medium leading-6 text-gray-900">
+							<Div as="h3" class="text-lg font-medium leading-6 text-gray-900">
 								{{ isEdit ? "Edit Task" : "Add Task" }}
-							</DialogTitle>
+							</Div>
 							<div class="mt-4">
 								<form action="" @submit.prevent="isEdit ? updateCard() : addNewCard()" class="w-full">
 									<div>
@@ -66,7 +60,7 @@
 								</form>
 							</div>
 						</div>
-					</TransitionChild>
+					</div>
 				</div>
 			</div>
 		</Dialog>
@@ -75,7 +69,7 @@
 
 <script setup>
 import { ref, reactive } from "vue";
-import { TransitionRoot, TransitionChild, Dialog, DialogOverlay, DialogTitle } from "@headlessui/vue";
+import { TransitionRoot, Dialog } from "@headlessui/vue";
 import { useBoardStore } from "@/stores/board";
 
 const props = defineProps({

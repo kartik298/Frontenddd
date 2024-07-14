@@ -31,7 +31,7 @@ export const useBoardStore = defineStore({
 			console.log(listId,title,description,img);
 			const list = getListById(this.lists, listId);
 			console.log(list);
-			list.items.push(makeItem(title, description, img,avatars));
+			list.items.push(makeItem(title, description, img,avatars,null));
 		},
 		updateItem({ itemId, title, description, img }) {
 			const item = getItemById(this.lists, itemId);
