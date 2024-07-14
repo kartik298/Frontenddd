@@ -18,7 +18,6 @@
 							<DialogTitle as="h3" class="text-lg font-medium leading-6 text-gray-900">
 								{{ isEdit ? "Edit Task" : "Add Task" }}
 							</DialogTitle>
-							{{task }}
 							<div class="mt-4">
 								<form action="" @submit.prevent="isEdit ? updateCard() : addNewCard()" class="w-full">
 									<div>
